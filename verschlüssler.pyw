@@ -33,6 +33,10 @@ while True:
                                 pos = ord(i) - ord("A")
                                 pos = (pos + shift) % 26
                                 vn = vn + chr(pos + ord("A"))
+                            elif i >= "0" and i <= "9":
+                                pos = ord(i) - ord("0")
+                                pos = (pos + shift) % 10
+                                vn = vn + chr(pos + ord("0"))
                             else:
                                 vn = vn + i
                         elif a % 2 == 0:
@@ -45,6 +49,10 @@ while True:
                                 pos = ord(i) - ord("A")
                                 pos = (pos+shift) % 26
                                 vn = vn + chr(pos + ord("A"))
+                            elif i >= "0" and i <= "9":
+                                pos = ord(i) - ord("0")
+                                pos = (pos + shift) % 10
+                                vn = vn + chr(pos + ord("0"))
                             else:
                                 vn = vn + i
                         else:
@@ -57,6 +65,10 @@ while True:
                                 pos = ord(i) - ord("A")
                                 pos = (pos+shift) % 26
                                 vn = vn + chr(pos + ord("A"))
+                            elif i >= "0" and i <= "9":
+                                pos = ord(i) - ord("0")
+                                pos = (pos + shift) % 10
+                                vn = vn + chr(pos + ord("0"))
                             else:
                                 vn = vn + i
                 vt.configure(text=f"{vn}", bg="darkgreen")
