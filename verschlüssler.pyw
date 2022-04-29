@@ -37,6 +37,18 @@ while True:
                                 pos = ord(i) - ord("0")
                                 pos = (pos + shift) % 10
                                 vn = vn + chr(pos + ord("0"))
+                            elif i >= " " and i <= "/": #
+                                pos = ord(i) - ord(" ")
+                                pos = (pos + shift) % 16
+                                vn = vn + chr(pos + ord(" "))
+                            elif i >= ":" and i <= ">": #
+                                pos = ord(i) - ord(":")
+                                pos = (pos + shift) % 5
+                                vn = vn + chr(pos + ord(":"))
+                            elif i >= "[" and i <= "_": #
+                                pos = ord(i) - ord("[")
+                                pos = (pos + shift) % 5
+                                vn = vn + chr(pos + ord("["))
                             else:
                                 vn = vn + i
                         elif a % 2 == 0:
@@ -53,6 +65,18 @@ while True:
                                 pos = ord(i) - ord("0")
                                 pos = (pos + shift) % 10
                                 vn = vn + chr(pos + ord("0"))
+                            elif i >= " " and i <= "/":  #
+                                pos = ord(i) - ord(" ")
+                                pos = (pos + shift) % 16
+                                vn = vn + chr(pos + ord(" "))
+                            elif i >= ":" and i <= ">": #
+                                pos = ord(i) - ord(":")
+                                pos = (pos + shift) % 5
+                                vn = vn + chr(pos + ord(":"))
+                            elif i >= "[" and i <= "_": #
+                                pos = ord(i) - ord("[")
+                                pos = (pos + shift) % 5
+                                vn = vn + chr(pos + ord("["))
                             else:
                                 vn = vn + i
                         else:
@@ -69,6 +93,18 @@ while True:
                                 pos = ord(i) - ord("0")
                                 pos = (pos + shift) % 10
                                 vn = vn + chr(pos + ord("0"))
+                            elif i >= " " and i <= "/":  #
+                                pos = ord(i) - ord(" ")
+                                pos = (pos + shift) % 16
+                                vn = vn + chr(pos + ord(" "))
+                            elif i >= ":" and i <= ">": #
+                                pos = ord(i) - ord(":")
+                                pos = (pos + shift) % 5
+                                vn = vn + chr(pos + ord(":"))
+                            elif i >= "[" and i <= "_": #
+                                pos = ord(i) - ord("[")
+                                pos = (pos + shift) % 5
+                                vn = vn + chr(pos + ord("["))
                             else:
                                 vn = vn + i
                 vt.configure(text=f"{vn}", bg="darkgreen")
