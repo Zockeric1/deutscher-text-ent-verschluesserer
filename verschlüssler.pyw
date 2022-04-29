@@ -1,5 +1,6 @@
 while True:
     import subprocess
+
     try:
         import easygui
         import tkinter as tk
@@ -9,9 +10,11 @@ while True:
         if pw == "12345":
             vn = ""
 
+
             def kopieren():
                 global vn
                 pyperclip.copy(vn)
+
 
             def verschlüsseln():
                 wtwt = wt.get()
@@ -25,91 +28,41 @@ while True:
                         a += 1
                         if a % 3 == 0:  #
                             shift = 7
-                            if i >= "a" and i <= "z":
-                                pos = ord(i) - ord("a")
-                                pos = (pos + shift) % 26
-                                vn = vn + chr(pos + ord("a"))
-                            elif i >= "A" and i <= "Z":
-                                pos = ord(i) - ord("A")
-                                pos = (pos + shift) % 26
-                                vn = vn + chr(pos + ord("A"))
-                            elif i >= "0" and i <= "9":
-                                pos = ord(i) - ord("0")
-                                pos = (pos + shift) % 10
-                                vn = vn + chr(pos + ord("0"))
-                            elif i >= " " and i <= "/": #
-                                pos = ord(i) - ord(" ")
-                                pos = (pos + shift) % 16
-                                vn = vn + chr(pos + ord(" "))
-                            elif i >= ":" and i <= ">": #
-                                pos = ord(i) - ord(":")
-                                pos = (pos + shift) % 5
-                                vn = vn + chr(pos + ord(":"))
-                            elif i >= "[" and i <= "_": #
-                                pos = ord(i) - ord("[")
-                                pos = (pos + shift) % 5
-                                vn = vn + chr(pos + ord("["))
-                            else:
-                                vn = vn + i
                         elif a % 2 == 0:
                             shift = -4
-                            if i >= "a" and i <= "z":
-                                pos = ord(i) - ord("a")
-                                pos = (pos+shift) % 26
-                                vn = vn + chr(pos + ord("a"))
-                            elif i >= "A" and i <= "Z":
-                                pos = ord(i) - ord("A")
-                                pos = (pos+shift) % 26
-                                vn = vn + chr(pos + ord("A"))
-                            elif i >= "0" and i <= "9":
-                                pos = ord(i) - ord("0")
-                                pos = (pos + shift) % 10
-                                vn = vn + chr(pos + ord("0"))
-                            elif i >= " " and i <= "/":  #
-                                pos = ord(i) - ord(" ")
-                                pos = (pos + shift) % 16
-                                vn = vn + chr(pos + ord(" "))
-                            elif i >= ":" and i <= ">": #
-                                pos = ord(i) - ord(":")
-                                pos = (pos + shift) % 5
-                                vn = vn + chr(pos + ord(":"))
-                            elif i >= "[" and i <= "_": #
-                                pos = ord(i) - ord("[")
-                                pos = (pos + shift) % 5
-                                vn = vn + chr(pos + ord("["))
-                            else:
-                                vn = vn + i
                         else:
                             shift = 2
-                            if i >= "a" and i <= "z":
-                                pos = ord(i) - ord("a")
-                                pos = (pos+shift) % 26
-                                vn = vn + chr(pos + ord("a"))
-                            elif i >= "A" and i <= "Z":
-                                pos = ord(i) - ord("A")
-                                pos = (pos+shift) % 26
-                                vn = vn + chr(pos + ord("A"))
-                            elif i >= "0" and i <= "9":
-                                pos = ord(i) - ord("0")
-                                pos = (pos + shift) % 10
-                                vn = vn + chr(pos + ord("0"))
-                            elif i >= " " and i <= "/":  #
-                                pos = ord(i) - ord(" ")
-                                pos = (pos + shift) % 16
-                                vn = vn + chr(pos + ord(" "))
-                            elif i >= ":" and i <= ">": #
-                                pos = ord(i) - ord(":")
-                                pos = (pos + shift) % 5
-                                vn = vn + chr(pos + ord(":"))
-                            elif i >= "[" and i <= "_": #
-                                pos = ord(i) - ord("[")
-                                pos = (pos + shift) % 5
-                                vn = vn + chr(pos + ord("["))
-                            else:
-                                vn = vn + i
+                        if i >= "a" and i <= "z":
+                            pos = ord(i) - ord("a")
+                            pos = (pos + shift) % 26
+                            vn = vn + chr(pos + ord("a"))
+                        elif i >= "A" and i <= "Z":
+                            pos = ord(i) - ord("A")
+                            pos = (pos + shift) % 26
+                            vn = vn + chr(pos + ord("A"))
+                        elif i >= "0" and i <= "9":
+                            pos = ord(i) - ord("0")
+                            pos = (pos + shift) % 10
+                            vn = vn + chr(pos + ord("0"))
+                        elif i >= " " and i <= "/":  #
+                            pos = ord(i) - ord(" ")
+                            pos = (pos + shift) % 16
+                            vn = vn + chr(pos + ord(" "))
+                        elif i >= ":" and i <= ">":  #
+                            pos = ord(i) - ord(":")
+                            pos = (pos + shift) % 5
+                            vn = vn + chr(pos + ord(":"))
+                        elif i >= "[" and i <= "_":  #
+                            pos = ord(i) - ord("[")
+                            pos = (pos + shift) % 5
+                            vn = vn + chr(pos + ord("["))
+                        else:
+                            vn = vn + i
+
                 vt.configure(text=f"{vn}", bg="darkgreen")
                 cp = tk.Button(root, text="Kopieren", command=kopieren, bg="darkred")
                 cp.grid(row=1, column=2)
+
 
             root = tk.Tk()
             root.title("Text-verschlüssler")
@@ -126,7 +79,7 @@ while True:
             vt.grid(row=1, column=1)
             auth = tk.Label(root, text="@Author: Eric Fellinger", bg="yellow")
             auth.grid(row=2, column=2)
-            
+
             root.mainloop()
             break
         break
