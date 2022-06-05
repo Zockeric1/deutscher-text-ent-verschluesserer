@@ -22,7 +22,7 @@ while True:
                 global vn
                 vt.configure(text=f"{vn}", bg="black")
 
-                for x in range(8):
+                for x in range(17):
                     vn = ""
                     for i in wtwt:
                         a += 1
@@ -58,6 +58,7 @@ while True:
                             vn = vn + chr(pos + ord("["))
                         else:
                             vn = vn + i
+                    wds = vn
 
                 vt.configure(text=f"{vn}", bg="darkgreen")
                 cp = tk.Button(root, text="Kopieren", command=kopieren, bg="darkred")
